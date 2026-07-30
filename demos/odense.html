@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" data-palette="hueso" data-fonts="clasica">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ana &amp; luis — invitación</title>
+<meta name="description" content="Invitación digital hecha por memora.">
+
+<script>
+  /* Aplicamos el tema ANTES de pintar, para que no haya parpadeo. */
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var el = document.documentElement;
+    if (p.get('paleta')) el.setAttribute('data-palette', p.get('paleta'));
+    if (p.get('fuentes')) el.setAttribute('data-fonts', p.get('fuentes'));
+    if (p.get('embed') === '1') el.classList.add('is-embed');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Jomolhari&family=Karla:wght@300;400;500&family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 1. Tema (compartido con el modal del sitio) -->
+<link rel="stylesheet" href="../css/themes.css">
+<!-- 2. Layout de este template -->
+<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<header class="cover">
+  <p class="eyebrow" data-f="portada.eyebrow"></p>
+  <h1 class="cover__names">
+    <span data-f="pareja.uno"></span>
+    <span class="cover__amp">&amp;</span>
+    <span data-f="pareja.dos"></span>
+  </h1>
+  <span class="rule cover__rule"></span>
+  <p class="cover__date" data-f="evento.fechaTexto"></p>
+  <p class="cover__city" data-f="evento.ciudad"></p>
+  <p class="cover__frase" data-f="portada.frase"></p>
+</header>
+
+<!-- ============ CUENTA REGRESIVA ============ -->
+<section class="count" id="count" aria-label="cuenta regresiva">
+  <div class="count__cell"><span class="count__num" id="cDias">—</span><span class="count__lab">días</span></div>
+  <div class="count__cell"><span class="count__num" id="cHoras">—</span><span class="count__lab">horas</span></div>
+  <div class="count__cell"><span class="count__num" id="cMin">—</span><span class="count__lab">min</span></div>
+  <div class="count__cell"><span class="count__num" id="cSeg">—</span><span class="count__lab">seg</span></div>
+</section>
+
+<main>
+
+  <!-- ============ DETALLES ============ -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" data-r>cuándo y dónde</p>
+      <div class="grid2" id="detalles" style="margin-top:26px"></div>
+    </div>
+  </section>
+
+  <!-- ============ ITINERARIO ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow" data-r>el día</p>
+      <h2 class="section__title" data-r style="margin-top:10px">itinerario</h2>
+      <ul class="timeline" id="itinerario" data-r></ul>
+    </div>
+  </section>
+
+  <!-- ============ CÓDIGO DE VESTIMENTA ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow" data-r data-f="codigo.titulo"></p>
+      <p class="rsvp__text" data-r data-f="codigo.texto" style="margin-left:0;text-align:left"></p>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow" data-r>nosotros</p>
+      <div class="gallery" id="galeria" data-r></div>
+    </div>
+  </section>
+
+  <!-- ============ MESA DE REGALOS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow" data-r>mesa de regalos</p>
+      <div class="gifts" id="regalos" data-r></div>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="section rsvp" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="section__title" data-r>confirma tu asistencia</h2>
+      <p class="rsvp__text" data-r data-f="rsvp.texto"></p>
+      <a class="rsvp__btn" id="rsvpBtn" href="#" data-r>confirmar asistencia</a>
+      <ul class="notes" id="notas" data-r></ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PIE ============ -->
+<footer class="foot">
+  <p class="foot__hash" data-f="pareja.hashtag"></p>
+  <p class="foot__by">invitación por <a href="../index.html">memora</a></p>
+</footer>
+
+<script src="data/anayluis.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>

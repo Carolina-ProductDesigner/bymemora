@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pedir mi invitación — memora</title>
+<meta name="description" content="Contesta el cuestionario y arma tu invitación digital con memora.">
+
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('reduced-motion');
+  } else {
+    var showIntro = true;
+    try { showIntro = !window.sessionStorage.getItem('memora:intro'); } catch (e) {}
+    if (showIntro) document.documentElement.classList.add('intro-active');
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jomolhari&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ CORTINILLA DE INTRO ============ -->
+<div class="intro-curtain" id="introCurtain" aria-hidden="true">
+  <svg class="intro-curtain__logo" viewBox="0 0 1021 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="memora">
+    <path class="intro-curtain__path" d="M6 206.4C2 206.4 2.38419e-07 204.934 2.38419e-07 202C2.38419e-07 199.6 1.73333 198 5.2 197.2L10 196.4C15.6 195.334 19.2 193.734 20.8 191.6C22.6667 189.2 23.6 185.2 23.6 179.6V45.2004C23.6 40.4004 22.8 37.2004 21.2 35.6004C19.8667 33.7337 17.3333 32.5337 13.6 32.0004L5.2 30.8004C1.73333 30.5337 2.38419e-07 29.067 2.38419e-07 26.4004C2.38419e-07 24.267 2.13333 22.8004 6.4 22.0004C14.6667 20.667 20.9333 18.5337 25.2 15.6004C29.7333 12.667 34.4 9.06705 39.2 4.80039C41.6 2.40039 43.6 1.20039 45.2 1.20039C47.6 1.20039 48.8 2.80038 48.8 6.00037V24.0004C48.8 25.867 49.6 27.3337 51.2 28.4004C52.8 29.2004 54.5333 28.667 56.4 26.8004C67.3333 16.4004 76.8 9.33371 84.8 5.60038C93.0667 1.86704 101.333 0.000377655 109.6 0.000377655C117.333 0.000377655 124.133 2.13372 130 6.40039C136.133 10.4004 140.667 16.5337 143.6 24.8004C144.4 26.9337 145.733 28.267 147.6 28.8004C149.733 29.067 151.733 28.267 153.6 26.4004C164.533 16.267 174 9.33371 182 5.60038C190 1.86704 198.133 0.000377655 206.4 0.000377655C217.6 0.000377655 226.667 4.26705 233.6 12.8004C240.8 21.0671 244.4 33.3337 244.4 49.6004V179.6C244.4 185.2 245.2 189.2 246.8 191.6C248.667 193.734 252.4 195.2 258 196L266.8 197.2C269.733 197.734 271.2 199.334 271.2 202C271.2 204.934 269.6 206.4 266.4 206.4H198C194.267 206.4 192.4 204.934 192.4 202C192.4 199.334 193.867 197.734 196.8 197.2L202.4 196.4C208.533 195.6 212.533 194 214.4 191.6C216.267 189.2 217.2 185.2 217.2 179.6V54.0004C217.2 40.9337 214.8 31.7337 210 26.4004C205.467 21.067 199.2 18.4004 191.2 18.4004C183.2 18.4004 175.867 20.9337 169.2 26.0004C162.8 30.8004 157.6 37.3337 153.6 45.6004C149.6 53.6004 147.6 62.5337 147.6 72.4004V179.6C147.6 185.2 148.533 189.2 150.4 191.6C152.267 193.734 156.133 195.2 162 196L170.8 197.2C173.733 197.734 175.2 199.334 175.2 202C175.2 204.934 173.6 206.4 170.4 206.4H102.4C98.6667 206.4 96.8 204.934 96.8 202C96.8 199.334 98.2667 197.734 101.2 197.2L106.8 196.4C112.4 195.6 116 194 117.6 191.6C119.467 189.2 120.4 185.2 120.4 179.6V54.0004C120.4 40.9337 118 31.7337 113.2 26.4004C108.667 21.067 102.4 18.4004 94.4 18.4004C86.4 18.4004 79.0667 20.9337 72.4 26.0004C66 30.8004 60.8 37.3337 56.8 45.6004C52.8 53.6004 50.8 62.5337 50.8 72.4004V179.6C50.8 185.2 51.6 189.2 53.2 191.6C55.0667 194 58.8 195.467 64.4 196L75.2 197.2C78.1333 197.734 79.6 199.2 79.6 201.6C79.6 204.8 77.6 206.4 73.6 206.4H6ZM328.441 210C315.641 210 304.174 205.734 294.041 197.2C283.907 188.667 275.774 176.667 269.641 161.2C263.774 145.467 260.841 127.334 260.841 106.8C260.841 85.7337 263.907 67.2004 270.041 51.2004C276.174 35.2004 284.574 22.6671 295.241 13.6004C305.907 4.53371 317.774 0.000377655 330.841 0.000377655C346.574 0.000377655 359.241 6.53371 368.841 19.6004C378.707 32.4004 383.641 53.3337 383.641 82.4004C383.641 91.2004 380.307 95.6004 373.641 95.6004H297.641C292.307 95.6004 289.641 98.6671 289.641 104.8C289.641 133.067 293.774 154.267 302.041 168.4C310.307 182.534 320.841 189.6 333.641 189.6C343.774 189.6 352.041 186 358.441 178.8C364.841 171.6 370.041 159.467 374.041 142.4C374.841 139.467 376.574 138 379.241 138C382.441 138 383.641 140.667 382.841 146C378.574 169.734 371.774 186.4 362.441 196C353.107 205.334 341.774 210 328.441 210ZM296.441 85.6004H336.841C349.641 85.6004 356.041 78.9337 356.041 65.6004C356.041 48.267 353.907 34.667 349.641 24.8004C345.374 14.9337 338.974 10.0004 330.441 10.0004C320.041 10.0004 311.241 16.0004 304.041 28.0004C297.107 40.0004 292.574 57.067 290.441 79.2004C289.907 83.4671 291.907 85.6004 296.441 85.6004ZM381.828 206.4C377.828 206.4 375.828 204.934 375.828 202C375.828 199.6 377.561 198 381.028 197.2L385.828 196.4C391.428 195.334 395.028 193.734 396.628 191.6C398.495 189.2 399.428 185.2 399.428 179.6V45.2004C399.428 40.4004 398.628 37.2004 397.028 35.6004C395.695 33.7337 393.161 32.5337 389.428 32.0004L381.028 30.8004C377.561 30.5337 375.828 29.067 375.828 26.4004C375.828 24.267 377.961 22.8004 382.228 22.0004C390.495 20.667 396.761 18.5337 401.028 15.6004C405.561 12.667 410.228 9.06705 415.028 4.80039C417.428 2.40039 419.428 1.20039 421.028 1.20039C423.428 1.20039 424.628 2.80038 424.628 6.00037V24.0004C424.628 25.867 425.428 27.3337 427.028 28.4004C428.628 29.2004 430.361 28.667 432.228 26.8004C443.161 16.4004 452.628 9.33371 460.628 5.60038C468.895 1.86704 477.161 0.000377655 485.428 0.000377655C493.161 0.000377655 499.961 2.13372 505.828 6.40039C511.961 10.4004 516.495 16.5337 519.428 24.8004C520.228 26.9337 521.561 28.267 523.428 28.8004C525.561 29.067 527.561 28.267 529.428 26.4004C540.361 16.267 549.828 9.33371 557.828 5.60038C565.828 1.86704 573.961 0.000377655 582.228 0.000377655C593.428 0.000377655 602.495 4.26705 609.428 12.8004C616.628 21.0671 620.228 33.3337 620.228 49.6004V179.6C620.228 185.2 621.028 189.2 622.628 191.6C624.495 193.734 628.228 195.2 633.828 196L642.628 197.2C645.561 197.734 647.028 199.334 647.028 202C647.028 204.934 645.428 206.4 642.228 206.4H573.828C570.095 206.4 568.228 204.934 568.228 202C568.228 199.334 569.695 197.734 572.628 197.2L578.228 196.4C584.361 195.6 588.361 194 590.228 191.6C592.095 189.2 593.028 185.2 593.028 179.6V54.0004C593.028 40.9337 590.628 31.7337 585.828 26.4004C581.295 21.067 575.028 18.4004 567.028 18.4004C559.028 18.4004 551.695 20.9337 545.028 26.0004C538.628 30.8004 533.428 37.3337 529.428 45.6004C525.428 53.6004 523.428 62.5337 523.428 72.4004V179.6C523.428 185.2 524.361 189.2 526.228 191.6C528.095 193.734 531.961 195.2 537.828 196L546.628 197.2C549.561 197.734 551.028 199.334 551.028 202C551.028 204.934 549.428 206.4 546.228 206.4H478.228C474.495 206.4 472.628 204.934 472.628 202C472.628 199.334 474.095 197.734 477.028 197.2L482.628 196.4C488.228 195.6 491.828 194 493.428 191.6C495.295 189.2 496.228 185.2 496.228 179.6V54.0004C496.228 40.9337 493.828 31.7337 489.028 26.4004C484.495 21.067 478.228 18.4004 470.228 18.4004C462.228 18.4004 454.895 20.9337 448.228 26.0004C441.828 30.8004 436.628 37.3337 432.628 45.6004C428.628 53.6004 426.628 62.5337 426.628 72.4004V179.6C426.628 185.2 427.428 189.2 429.028 191.6C430.895 194 434.628 195.467 440.228 196L451.028 197.2C453.961 197.734 455.428 199.2 455.428 201.6C455.428 204.8 453.428 206.4 449.428 206.4H381.828ZM708.669 210C695.069 210 682.802 205.467 671.869 196.4C661.202 187.067 652.669 174.4 646.269 158.4C639.869 142.4 636.669 124.534 636.669 104.8C636.669 85.0671 639.869 67.3337 646.269 51.6004C652.669 35.8671 661.335 23.3337 672.269 14.0004C683.202 4.66704 695.335 0.000377655 708.669 0.000377655C722.269 0.000377655 734.402 4.66704 745.069 14.0004C756.002 23.3337 764.669 35.8671 771.069 51.6004C777.469 67.3337 780.669 85.0671 780.669 104.8C780.669 124.534 777.469 142.4 771.069 158.4C764.935 174.4 756.402 187.067 745.469 196.4C734.535 205.467 722.269 210 708.669 210ZM708.669 200C736.402 200 750.269 168.267 750.269 104.8C750.269 41.6004 736.402 10.0004 708.669 10.0004C680.935 10.0004 667.069 41.6004 667.069 104.8C667.069 168.267 680.935 200 708.669 200ZM828.35 28.0004C839.283 9.33371 852.483 0.000377655 867.95 0.000377655C876.75 0.000377655 883.283 2.66705 887.55 8.00038C891.817 13.067 893.95 18.8004 893.95 25.2004C893.95 30.2671 892.617 34.4004 889.95 37.6004C887.55 40.8004 883.683 42.4004 878.35 42.4004C874.083 42.4004 870.883 41.467 868.75 39.6004C866.883 37.4671 865.283 35.067 863.95 32.4004C862.883 29.7337 861.55 27.467 859.95 25.6004C858.35 23.4671 855.683 22.4004 851.95 22.4004C847.15 22.4004 842.617 25.3337 838.35 31.2004C834.083 36.8004 830.483 44.4004 827.55 54.0004C824.883 63.6004 823.55 74.5337 823.55 86.8004V179.6C823.55 185.2 824.35 189.2 825.95 191.6C827.817 194 831.55 195.467 837.15 196L847.95 197.2C850.883 197.734 852.35 199.2 852.35 201.6C852.35 204.8 850.35 206.4 846.35 206.4H778.75C774.75 206.4 772.75 204.934 772.75 202C772.75 199.6 774.483 198 777.95 197.2L782.75 196.4C788.35 195.334 791.95 193.734 793.55 191.6C795.417 189.2 796.35 185.2 796.35 179.6V45.2004C796.35 40.4004 795.55 37.2004 793.95 35.6004C792.617 33.7337 790.083 32.5337 786.35 32.0004L777.95 30.8004C774.483 30.5337 772.75 29.067 772.75 26.4004C772.75 24.267 774.883 22.8004 779.15 22.0004C787.417 20.667 793.683 18.5337 797.95 15.6004C802.483 12.667 807.15 9.06705 811.95 4.80039C814.35 2.40039 816.35 1.20039 817.95 1.20039C820.35 1.20039 821.55 2.80038 821.55 6.00037V27.6004C821.55 29.467 822.35 30.667 823.95 31.2004C825.55 31.4671 827.017 30.4004 828.35 28.0004ZM911.063 210C899.863 210 890.663 206.534 883.463 199.6C876.263 192.4 872.663 182.934 872.663 171.2C872.663 159.734 876.263 148.934 883.463 138.8C890.663 128.4 900.529 119.067 913.062 110.8C925.596 102.534 939.863 95.8671 955.863 90.8004C959.329 89.7337 961.063 87.4671 961.063 84.0004V47.6004C961.063 34.8004 959.063 25.7337 955.063 20.4004C951.063 14.8004 945.596 12.0004 938.663 12.0004C931.996 12.0004 925.863 15.067 920.263 21.2004C914.929 27.067 911.063 37.0671 908.663 51.2004C907.329 59.7337 904.396 66.0004 899.863 70.0004C895.596 73.7337 891.196 75.6004 886.663 75.6004C879.196 75.6004 875.463 71.867 875.463 64.4004C875.463 56.6671 877.596 49.0671 881.863 41.6004C886.396 33.867 892.263 26.9337 899.463 20.8004C906.663 14.4004 914.529 9.33371 923.063 5.60038C931.596 1.86704 940.129 0.000377655 948.663 0.000377655C975.063 0.000377655 988.263 15.3337 988.263 46.0004V168.4C988.263 179.6 991.063 185.2 996.663 185.2C1000.13 185.2 1003.33 182.934 1006.26 178.4C1009.2 173.6 1010.66 165.6 1010.66 154.4C1010.66 150.134 1012.4 148 1015.86 148C1019.06 148 1020.66 150.267 1020.66 154.8C1020.66 174.267 1017.2 188.4 1010.26 197.2C1003.6 205.734 995.996 210 987.463 210C981.063 210 975.996 207.467 972.263 202.4C968.529 197.067 965.996 190.8 964.663 183.6C964.396 180.934 963.196 179.6 961.063 179.6C959.196 179.334 957.329 180.534 955.463 183.2C949.063 192 942.529 198.667 935.863 203.2C929.196 207.734 920.929 210 911.063 210ZM921.862 191.6C928.796 191.6 935.196 189.2 941.063 184.4C946.929 179.334 951.729 172.667 955.463 164.4C959.196 156.134 961.063 146.8 961.063 136.4V107.2C961.063 102.134 958.263 100.667 952.663 102.8C936.396 108.667 923.729 116.8 914.663 127.2C905.863 137.334 901.463 149.6 901.463 164C901.463 182.4 908.263 191.6 921.862 191.6Z"/>
+  </svg>
+  <button class="intro-curtain__skip" type="button" id="introSkip">saltar</button>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">memora</a>
+
+    <nav class="nav" aria-label="principal">
+      <a href="index.html#servicios">servicios</a>
+      <a href="index.html#como-funciona">como funciona</a>
+      <a href="predisenadas.html">pre-diseñadas</a>
+      <a href="sobre-memora.html">sobre memora</a>
+      <a href="pedir-mi-invitacion.html" class="is-active is-current">pedir mi invitación</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="abrir menú" aria-expanded="false">
+      <span class="nav-toggle__icon"></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#servicios">servicios</a>
+    <a href="index.html#como-funciona">como funciona</a>
+    <a href="predisenadas.html">pre-diseñadas</a>
+    <a href="sobre-memora.html">sobre memora</a>
+    <a href="pedir-mi-invitacion.html" class="is-active is-current">pedir mi invitación</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ ENCABEZADO ============ -->
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-head__title" data-reveal>pedir mi invitación</h1>
+      <p class="page-head__sub" data-reveal style="--d:1">¡ya estás más cerca de tener tu invitación! contesta este cuestionario y definamos todos los detalles.</p>
+    </div>
+  </section>
+
+  <!-- ============ STEPPER ============ -->
+  <div class="container">
+    <p class="stepper__count" id="stepperCount">paso 1 de 6</p>
+    <nav class="stepper" id="stepper" aria-label="progreso del cuestionario">
+      <button class="stepper__item is-current" type="button" data-go="1"><span class="stepper__dot"></span><span class="stepper__label">tus datos</span></button>
+      <button class="stepper__item" type="button" data-go="2"><span class="stepper__dot"></span><span class="stepper__label">elige el tipo de invitación</span></button>
+      <button class="stepper__item" type="button" data-go="3"><span class="stepper__dot"></span><span class="stepper__label">selecciona tu pre-diseñada</span></button>
+      <button class="stepper__item" type="button" data-go="4"><span class="stepper__dot"></span><span class="stepper__label">diseño y extras</span></button>
+      <button class="stepper__item" type="button" data-go="5"><span class="stepper__dot"></span><span class="stepper__label">información completa de tu evento</span></button>
+      <button class="stepper__item" type="button" data-go="6"><span class="stepper__dot"></span><span class="stepper__label">revisa tu información y paga tu pedido</span></button>
+    </nav>
+  </div>
+
+  <!-- ============ CUESTIONARIO ============ -->
+  <form class="wizard container" id="wizard" novalidate>
+
+    <!-- ---------- PASO 1 ---------- -->
+    <section class="step is-active" data-step="1">
+      <h2 class="step__head">ingresa tus datos</h2>
+
+      <div class="fields">
+        <div class="field">
+          <label class="field__label" for="f_nombre">tu nombre completo *</label>
+          <input class="input" id="f_nombre" name="nombre" type="text" autocomplete="name" required>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_pareja">nombre de tu pareja *</label>
+          <input class="input" id="f_pareja" name="pareja" type="text" required>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_email">correo electrónico *</label>
+          <input class="input" id="f_email" name="email" type="email" autocomplete="email" required>
+          <span class="field__hint">aquí te llega la confirmación y la liga de pago.</span>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_tel">whatsapp *</label>
+          <input class="input" id="f_tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678" required>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field field--full">
+          <label class="field__label" for="f_conocimos">¿cómo nos conociste?</label>
+          <select class="input" id="f_conocimos" name="conocimos">
+            <option value="">selecciona una opción</option>
+            <option>instagram</option>
+            <option>tiktok</option>
+            <option>pinterest</option>
+            <option>me recomendaron</option>
+            <option>google</option>
+            <option>otro</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PASO 2 ---------- -->
+    <section class="step" data-step="2">
+      <h2 class="step__head">¿qué tipo de invitación vas a querer?</h2>
+      <div class="options" id="tipos" role="radiogroup" aria-label="tipo de invitación"></div>
+      <span class="field__err field__err--block" id="err_tipo"></span>
+    </section>
+
+    <!-- ---------- PASO 3 ---------- -->
+    <section class="step" data-step="3">
+      <h2 class="step__head">selecciona tu invitación pre-diseñada</h2>
+
+      <div id="paso3Pre">
+        <div class="designs" id="disenos" role="radiogroup" aria-label="diseño pre-diseñado"></div>
+        <span class="field__err field__err--block" id="err_diseno"></span>
+
+        <div class="theme-pick">
+          <div class="picker">
+            <p class="picker__label" id="lblPal">paleta de colores</p>
+            <div class="picker__grid" id="palettes" role="radiogroup" aria-labelledby="lblPal"></div>
+          </div>
+          <div class="picker">
+            <p class="picker__label" id="lblFon">paquete de fuentes</p>
+            <div class="picker__grid" id="fonts" role="radiogroup" aria-labelledby="lblFon"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="paso3Custom" hidden>
+        <p class="step__note">como elegiste una invitación personalizada, este paso lo platicamos contigo. cuéntanos por dónde va tu idea:</p>
+        <div class="fields">
+          <div class="field field--full">
+            <label class="field__label" for="f_idea">tu idea, inspiración o referencia</label>
+            <textarea class="input" id="f_idea" name="idea" rows="5" placeholder="colores, estilo, links de pinterest, lo que se te ocurra"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PASO 4 ---------- -->
+    <section class="step" data-step="4">
+      <h2 class="step__head">diseño y extras</h2>
+      <p class="step__note">todo lo de aquí es opcional. el precio se actualiza solo.</p>
+      <div class="extras" id="extras"></div>
+
+      <div class="fields" style="margin-top:28px">
+        <div class="field field--full">
+          <label class="field__label" for="f_notas_diseno">¿algo más que quieras pedirnos de diseño?</label>
+          <textarea class="input" id="f_notas_diseno" name="notasDiseno" rows="3"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PASO 5 ---------- -->
+    <section class="step" data-step="5">
+      <h2 class="step__head">información completa de tu evento</h2>
+      <p class="step__note">si todavía no tienes algún dato, déjalo en blanco y lo completamos después.</p>
+
+      <div class="fields">
+        <div class="field field--full">
+          <label class="field__label" for="f_nombres">nombres como van en la invitación *</label>
+          <input class="input" id="f_nombres" name="nombres" type="text" placeholder="ana &amp; luis" required>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_fecha">fecha del evento *</label>
+          <input class="input" id="f_fecha" name="fecha" type="date" required>
+          <span class="field__err"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_hora">hora</label>
+          <input class="input" id="f_hora" name="hora" type="time">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_ciudad">ciudad y estado</label>
+          <input class="input" id="f_ciudad" name="ciudad" type="text" placeholder="tepoztlán, morelos">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_invitados">número aproximado de invitados</label>
+          <input class="input" id="f_invitados" name="invitados" type="number" min="1" inputmode="numeric">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_ceremonia">lugar de la ceremonia</label>
+          <input class="input" id="f_ceremonia" name="ceremonia" type="text">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_ceremonia_dir">dirección de la ceremonia</label>
+          <input class="input" id="f_ceremonia_dir" name="ceremoniaDir" type="text">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_recepcion">lugar de la recepción</label>
+          <input class="input" id="f_recepcion" name="recepcion" type="text">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_recepcion_dir">dirección de la recepción</label>
+          <input class="input" id="f_recepcion_dir" name="recepcionDir" type="text">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_dresscode">código de vestimenta</label>
+          <input class="input" id="f_dresscode" name="dresscode" type="text" placeholder="formal de jardín">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f_dominio">dominio que te gustaría</label>
+          <input class="input" id="f_dominio" name="dominio" type="text" placeholder="anayluis">
+          <span class="field__hint">quedaría bymemora.mx/anayluis</span>
+        </div>
+
+        <div class="field field--full">
+          <label class="field__label" for="f_itinerario">itinerario del día</label>
+          <textarea class="input" id="f_itinerario" name="itinerario" rows="4" placeholder="5:00 pm ceremonia&#10;7:00 pm recepción&#10;10:00 pm fiesta"></textarea>
+        </div>
+
+        <div class="field field--full">
+          <label class="field__label" for="f_regalos">mesa de regalos</label>
+          <textarea class="input" id="f_regalos" name="regalos" rows="3" placeholder="liverpool evento 51234567, transferencia, sobre..."></textarea>
+        </div>
+
+        <div class="field field--full">
+          <label class="field__label" for="f_notas">notas para tus invitados</label>
+          <textarea class="input" id="f_notas" name="notas" rows="3" placeholder="evento solo para adultos, habrá transporte, etc."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PASO 6 ---------- -->
+    <section class="step" data-step="6">
+      <h2 class="step__head">revisa tu info y paga tu pedido</h2>
+
+      <div class="review">
+        <div class="review__col">
+          <h3 class="review__title">tu pedido</h3>
+          <dl class="review__list" id="resumen"></dl>
+        </div>
+
+        <aside class="quote" id="quote">
+          <h3 class="review__title">tu cotización</h3>
+          <ul class="quote__lines" id="quoteLines"></ul>
+
+          <div class="promo" id="promo">
+            <button type="button" class="promo__toggle" id="promoToggle">¿tienes un código de descuento?</button>
+            <div class="promo__row" id="promoRow" hidden>
+              <input class="input promo__input" id="promoCode" type="text" placeholder="tu código" autocomplete="off" autocapitalize="characters">
+              <button type="button" class="btn btn--fill promo__apply" id="promoApply">aplicar</button>
+            </div>
+            <p class="promo__msg" id="promoMsg" role="status"></p>
+          </div>
+
+          <div class="quote__total">
+            <span>total</span>
+            <strong id="quoteTotal">$0 mxn</strong>
+          </div>
+
+          <div class="paymode" id="paymode">
+            <label class="paymode__opt">
+              <input type="radio" name="pago" value="total" checked>
+              <span>pagar todo ahora <em id="payTotal"></em></span>
+            </label>
+            <label class="paymode__opt">
+              <input type="radio" name="pago" value="anticipo">
+              <span>anticipo del 50% <em id="payAnticipo"></em><small>el resto al entregar tu invitación</small></span>
+            </label>
+          </div>
+
+          <label class="check check--terms">
+            <input type="checkbox" id="f_terms" required>
+            <span>confirmo que mis datos son correctos y acepto los términos del servicio.</span>
+          </label>
+          <span class="field__err field__err--block" id="err_terms"></span>
+
+          <button class="btn btn--pay" type="submit" id="submitBtn">ir a pagar con mercado pago</button>
+          <p class="quote__legal">te vamos a mandar la liga de pago a tu correo también. tu invitación se agenda al confirmarse el pago.</p>
+        </aside>
+      </div>
+
+      <div class="sendstate" id="sendState" hidden></div>
+    </section>
+
+    <!-- ---------- NAVEGACIÓN ---------- -->
+    <div class="wizard__nav">
+      <button class="btn btn--outline" type="button" id="btnPrev">atrás</button>
+      <button class="btn btn--fill" type="button" id="btnNext">continuar</button>
+    </div>
+
+  </form>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__logo">memora</p>
+    <div class="footer__meta">
+      <a href="#">@bymemora</a>
+      <a href="#">bymemora.mx</a>
+      <span>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/precios.js"></script>
+<script src="js/pedido.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/transicion.js"></script>
+<script src="js/contacto.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* ============================================================
+   memora — TEMAS
+   ------------------------------------------------------------
+   ÚNICA FUENTE DE VERDAD de paletas y tipografías.
+   Este archivo lo cargan DOS cosas:
+     · el personalizador del modal (predisenadas.html)
+     · los demos reales (demos/*.html)
+   Editas aquí una vez y cambian los dos. No dupliques colores
+   en ningún otro archivo.
+   ============================================================ */
+
+/* ---------- 1. PALETAS DE COLOR (4) ---------- */
+[data-palette="hueso"]{
+  --pv-bg:#F6F3EC;
+  --pv-line:#DDD5C2;
+  --pv-accent:#B08968;
+  --pv-ink:#2B2A26;
+}
+[data-palette="tinta"]{
+  --pv-bg:#16150F;
+  --pv-line:#3A382C;
+  --pv-accent:#C9A227;
+  --pv-ink:#F3F0E6;
+}
+[data-palette="nieve"]{
+  --pv-bg:#FFFFFF;
+  --pv-line:#EEEEEE;
+  --pv-accent:#787878;
+  --pv-ink:#000000;
+}
+[data-palette="terracota"]{
+  --pv-bg:#F7EDE8;
+  --pv-line:#E7CFC5;
+  --pv-accent:#C0675A;
+  --pv-ink:#3A2621;
+}
+
+/* ---------- 2. PAQUETES DE FUENTES (4) ---------- */
+[data-fonts="clasica"]{
+  --pv-display:"Jomolhari", Georgia, serif;
+  --pv-body:"Poppins", Helvetica, Arial, sans-serif;
+}
+[data-fonts="editorial"]{
+  --pv-display:"Playfair Display", Georgia, serif;
+  --pv-body:"Karla", Helvetica, Arial, sans-serif;
+}
+[data-fonts="romantica"]{
+  --pv-display:"Cormorant Garamond", Georgia, serif;
+  --pv-body:"DM Sans", Helvetica, Arial, sans-serif;
+}
+[data-fonts="moderna"]{
+  --pv-display:"Instrument Serif", Georgia, serif;
+  --pv-body:"Space Grotesk", Helvetica, Arial, sans-serif;
+}
+

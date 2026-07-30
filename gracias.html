@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡gracias! — memora</title>
+<meta name="robots" content="noindex">
+
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jomolhari&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">memora</a>
+    <nav class="nav" aria-label="principal">
+      <a href="index.html#servicios">servicios</a>
+      <a href="index.html#como-funciona">como funciona</a>
+      <a href="predisenadas.html">pre-diseñadas</a>
+      <a href="sobre-memora.html">sobre memora</a>
+      <a href="pedir-mi-invitacion.html" class="is-active">pedir mi invitación</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="abrir menú" aria-expanded="false">
+      <span class="nav-toggle__icon"></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#servicios">servicios</a>
+    <a href="index.html#como-funciona">como funciona</a>
+    <a href="predisenadas.html">pre-diseñadas</a>
+    <a href="sobre-memora.html">sobre memora</a>
+    <a href="pedir-mi-invitacion.html" class="is-active">pedir mi invitación</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-head__title" id="gTitulo">¡gracias!</h1>
+      <p class="page-head__sub" id="gTexto">tu pedido quedó registrado.</p>
+      <p class="page-head__sub" id="gFolio" style="margin-top:10px"></p>
+    </div>
+  </section>
+
+  <section class="closing closing--bare">
+    <div class="container">
+      <h2 class="closing__title">todo con y desde<br class="br-m"> el amor</h2>
+      <p class="closing__sub">te vamos a escribir muy pronto para arrancar tu invitación.</p>
+      <div class="closing__actions">
+        <a href="index.html" class="btn btn--outline">volver al inicio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__logo">memora</p>
+    <div class="footer__meta">
+      <a href="#">@bymemora</a>
+      <a href="#">bymemora.mx</a>
+      <span>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var estado = q.get('estado');
+  var folio = q.get('folio');
+
+  var textos = {
+    aprobado:  ['¡listo!', 'tu pago se confirmó y tu invitación ya está pedida. te acaba de llegar un correo de confirmación.'],
+    pendiente: ['casi listo', 'tu pago quedó pendiente de confirmación. en cuanto se acredite te llega el correo y arrancamos.'],
+    rechazado: ['no se pudo cobrar', 'tu pedido quedó guardado. revisa el correo que te mandamos: ahí viene la liga para intentar de nuevo.']
+  };
+
+  var t = textos[estado];
+  if (t) {
+    document.getElementById('gTitulo').textContent = t[0];
+    document.getElementById('gTexto').textContent = t[1];
+  }
+  if (folio) document.getElementById('gFolio').innerHTML = 'tu folio es <strong>' + folio + '</strong>';
+})();
+</script>
+<script src="js/cursor.js"></script>
+<script src="js/transicion.js"></script>
+<script src="js/contacto.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
